@@ -1,0 +1,35 @@
+.login__form{
+    width: 400px;
+    background-color: #ffffff;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding-left: 2rem;
+    padding-top: 1.5rem;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.signup__form{
+    width: 400px;
+    background-color: #ffffff;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding-left: 2rem;
+    padding-top: 1.5rem;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+/* .actions{
+} */
+
+.login__button{
+    width: 200px;
+}
+.signup__button{
+    width: 200px;
+}
