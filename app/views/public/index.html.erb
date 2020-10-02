@@ -32,11 +32,9 @@
                 <p class="h5 mb-4">Popular Communities</p>
                 <div class="card text-white bg-dark communities">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item list-group-item-dark">Cras justo odio</li>
-                        <li class="list-group-item list-group-item-dark">Dapibus ac facilisis in</li>
-                        <li class="list-group-item list-group-item-dark">Morbi leo risus</li>
-                        <li class="list-group-item list-group-item-dark">Porta ac consectetur ac</li>
-                        <li class="list-group-item list-group-item-dark">Vestibulum at eros</li>
+                    <% @communities.each do |community| %>
+                        <li class="list-group-item list-group-item-dark"> <%= link_to community.name, community_path(community) %> </li>
+                    <% end %>
                     </ul>
                 </div>
 
