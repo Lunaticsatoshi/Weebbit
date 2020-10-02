@@ -1,3 +1,8 @@
+<% if account_signed_in? %>
+    <div class="float-right">
+        <%= link_to "Create New Community", new_community_path, class: "btn btn-outline-info"%>
+    </div>
+<% end %>
 <% if @communities.size > 0 %>
     <% @comminities.each do |community| %>
 
