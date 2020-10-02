@@ -25,6 +25,12 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
+gem 'bulma-rails', '~> 0.9.0'
+gem 'simple_form', '~> 5.0', '>= 5.0.3'
+gem 'gravatar_image_tag', '~> 1.2'
+gem 'jquery-rails', '~> 4.4'
+gem 'redcarpet', '~> 3.5'
+gem 'coderay', '~> 1.1', '>= 1.1.3'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
