@@ -13,7 +13,7 @@ class CommunitiesController < ApplicationController
     end
 
     def create
-        @community = Community.new.community_values
+        @community = Community.new community_values
         @community.account_id = current_account.id
 
         if @community.save
