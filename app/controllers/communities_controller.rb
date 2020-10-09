@@ -7,6 +7,8 @@ class CommunitiesController < ApplicationController
     end
 
     def show
+        @posts = @community.posts
+        @communities = Community.all.limit(5)
     end
 
     def new

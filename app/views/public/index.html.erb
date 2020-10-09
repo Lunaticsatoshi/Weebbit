@@ -24,8 +24,12 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-8">
-            Posts 
+        <div class="col-8"> 
+            <% @posts.each do |post|%>
+                <div class="col "></div>
+                <h4><%= link_to post.title, community_post_path(post.community_id, post) %></h4>
+                <p> <%= truncate post.body, length: 200 %> </p>
+            <% end %>
         </div>
         <div class="col-4">
             <div class="sidebar">
