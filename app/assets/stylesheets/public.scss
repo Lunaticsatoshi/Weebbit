@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body{
-    background-color: #141415;
+    background-color: black;
     color: white;
 }
 
@@ -15,11 +15,11 @@ body{
     color: #ffffff;
 }
 
-/* .navbar-brand{
+.navbar-brand{
     font-size: 1.5rem;
-    text-decoration: none;
+    text-decoration: inherit;
 }
- */
+
 /* #search{
     background-color: #2b2b2c;
     color: #8c8c8d;
@@ -53,13 +53,13 @@ body{
 }
 
 .card {
-    color: #1A1A1B;
+    background-color: rgb(26, 26, 27);
     border-radius: 0.4rem;
 }
 
 .user__image{
     border-radius: 25px;
-    height: 45px;
-    width: 45px;
+    height: 40px;
+    width: 40px;
     color: black;
 }

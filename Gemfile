@@ -31,6 +31,7 @@ gem 'gravatar_image_tag', '~> 1.2'
 gem 'jquery-rails', '~> 4.4'
 gem 'redcarpet', '~> 3.5'
 gem 'coderay', '~> 1.1', '>= 1.1.3'
+gem 'tinymce-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
