@@ -6,4 +6,10 @@ class Account < ApplicationRecord
          
   has_many :posts, dependent: :destroy
   has_many :communities, dependent: :destroy
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+  
 end
