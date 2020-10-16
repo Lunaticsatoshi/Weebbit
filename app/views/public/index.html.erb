@@ -30,7 +30,7 @@
         <div class="col-md-4 col-sm-12">
             <div class="sidebar">
                 <p class="h5 mb-4">Popular Communities</p>
-                <div class="card text-white bg-dark communities">
+                <div class="card  bg-dark communities">
                     <ul class="list-group list-group-flush">
                     <% @communities.each do |community| %>
                         <li class="list-group-item list-group-item-dark"> <%= link_to community.name, community_path(community) %> </li>
