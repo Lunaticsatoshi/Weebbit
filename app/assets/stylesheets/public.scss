@@ -52,6 +52,16 @@ body{
     object-fit: cover;
 }
 
+.navbar__brand a:link {
+    text-decoration:none;
+    font-size: 1.7rem;
+    color: white;
+}
+
+a:link, a:visited {
+    color: white;
+    text-decoration:none;
+}
 .card {
     background-color: rgb(26, 26, 27);
     border-radius: 0.4rem;

@@ -25,29 +25,7 @@
     </div>
     <div class="row mt-4">
         <div class="col-md-8 col-sm-12"> 
-            <% @posts.each do |post|%>
-                <div class="card p-3 mt-3">
-                    <div class="row">
-                        <div class="col-1">
-                            <%= gravatar_image_tag(post.account.email, size: 28, class: 'user__image' ,alt: post.account.username)%>
-                        </div>
-                        <div class="col-8 ml-2">
-                            <h4><%= link_to post.title, community_post_path(post.community_id, post) %></h4>
-                            
-                            <p><em><small>Posted <%= time_ago_in_words(post.created_at) %> ago
-                                by <%= post.account.username %>
-                            </small></em></p>
-                        </div>
-                        <div class="container ml-4">
-                            <p> <%= truncate post.body, length: 200 %> </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                
-                </div>
-                
-            <% end %>
+            <%= render partial: "posts/list", locals: { posts: @posts } %>
         </div>
         <div class="col-md-4 col-sm-12">
             <div class="sidebar">
@@ -60,7 +38,7 @@
                     </ul>
                 </div>
 
-            <%= link_to "View all", communities_path , class: "btn btn-light m-3 container-fluid"%>
+            <%= link_to "View all", communities_path , class: "btn btn-dark m-3 container-fluid"%>
             </div>
         </div>
     </div>

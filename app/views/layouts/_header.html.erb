@@ -1,10 +1,10 @@
-<div class="row pl-4 pr-4 pt-2 pb-2 mb-4 border-bottom navBar">
-        <div class="col-4"> <p class="h4"> <%= link_to "Weebbit", root_path, class: "navbar__brand" %> </p></div>
+<div class="row pl-4 pr-4 pt-2 pb-2 mb-3 navBar">
+        <div class="col-4"> <div class="navbar__brand"><%= link_to "Weebbit", root_path %></div></div>
         <div class="col-4"><input type="text" class="form-control container-fluid" id="search" placeholder="Search"></div>
         <div class="col-4">
             <div class="float-right">
                 <% if account_signed_in? %>
-                <div class="dropdown dropleft">
+                <div class="dropdown">
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <%= current_account.username %>
                     </a>
