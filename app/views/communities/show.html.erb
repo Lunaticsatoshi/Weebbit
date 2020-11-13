@@ -1,37 +1,60 @@
-<% if account_signed_in? %>
-    <div class="float-right">
-        <%= link_to "Create New Post", new_community_post_path(@community), class: "btn btn-outline-info"%>
-    </div>
-<% end %>
-
-<h1><%= "W/"+@community.name %></h1>
-
-<small><%= simple_format @community.rules %></small>
-
 <div class="container">
     <div class="row">
        <div class="col-md-8 col-sm-12">
-            <% @posts.each do |post|%>
-                <div class="card p-3 mt-3">
-                    <div class="row">
-                        <div class="col-1">
-                            <%= gravatar_image_tag(post.account.email, size: 28, class: 'user__image' ,alt: post.account.username)%>
+            <%= render partial: "posts/list", locals: { posts: @posts} %>
+       </div>
+       <div class="col-md-4 col-sm-12">
+            <div class="profile__card">
+                <div class="pic-container">
+                <img class="pic" src="https://i.ibb.co/sJKD14w/pro-pic.jpg" alt="Profile Picture">
+                </div>
+                <div class="name">
+                <h4><%= "W/"+@community.name %></h4>
+                </div>
+                <div class="title">
+                <span>PROGRAMMER</span>
+                </div>
+                <div class="detail__container">
+                    <div class="weeb__level">
+                        <h5 class="profile__text">Members</h5>
+                        <div class="weeb__con">
+                            <i class="fas fa-plus"></i>
+                            <span class="weeb_num">3</span>
                         </div>
-                        <div class="col-8 ml-2">
-                            <h4><%= link_to post.title, community_post_path(post.community_id, post) %></h4>
-                            
-                            <p><em><small>Posted <%= time_ago_in_words(post.created_at) %> ago
-                                by <%= post.account.username %>
-                            </small></em></p>
-                        </div>
-                        <div class="container ml-4">
-                            <p> <%= truncate post.body, length: 200 %> </p>
+                    </div>
+                    <div class="joining__date">
+                        <h5 class="profile__text">Created</h5>
+                        <div class="weeb__con">
+                            <i class="far fa-calendar-check"></i>
+                            <span class="weeb_num">
+                                <%= @community.created_at.strftime("%d/%m/%Y")%>
+                            </span>
                         </div>
                     </div>
                 </div>
-            <% end %>
-       </div>
-       <div class="col-md-4 col-sm-12">
+                <div class="description">
+                    <small><p> <%= simple_format @community.rules %> </p></small>
+                </div>
+                <% if account_signed_in? %>
+                    <div class="message">
+                        <%= link_to "Create New Post", new_community_post_path(@community)%>
+                    </div>
+                <% end %>
+                <div class="links">
+                <%# <a href="https://www.facebook.com" target="_blank" class="fb">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/" target="_blank" class="yt">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://codepen.io/" target="_blank" class="cp">
+                    <i class="fab fa-codepen"></i>
+                </a>
+                <a href="" target="_blank" class="bg">
+                    <i class="fab fa-blogger-b"></i>
+                </a> %>
+                </div>
+            </div>
             <div class="sidebar">
                 <p class="h5 mb-4">Popular Communities</p>
                 <div class="card text-white bg-dark communities">
@@ -42,7 +65,7 @@
                     </ul>
                 </div>
 
-            <%= link_to "View all", communities_path , class: "btn btn-light m-3 container-fluid"%>
+            <%= link_to "View all", communities_path , class: "btn btn-dark m-3 container-fluid"%>
             </div>
        </div> 
     </div>

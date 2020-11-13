@@ -7,7 +7,7 @@ class Account < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :communities, dependent: :destroy
 
-  validates_presence_of :first_name, :last_name, :username
+  validates_presence_of :username
 
   def full_name
     "#{first_name} #{last_name}"

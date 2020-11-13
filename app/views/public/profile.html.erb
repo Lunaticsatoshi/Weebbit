@@ -1,10 +1,63 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-8">
-
+            <%= render partial: "posts/list", locals: { posts: @posts} %>
         </div>
         <div class="col-sm-4">
-            <%= @profile.username %>
+             <div class="profile__card">
+                <div class="pic-container">
+                <%# <img class="pic" src="https://i.ibb.co/sJKD14w/pro-pic.jpg" alt="Profile Picture"> %>
+                <%= gravatar_image_tag(@profile.email, class: 'pic' ,alt: @profile.username)%>
+                </div>
+                <div class="name">
+                <span> <%= @profile.username %></span>
+                </div>
+                <div class="title">
+                <span>PROGRAMMER</span>
+                </div>
+                <div class="detail__container">
+                    <div class="weeb__level">
+                        <h5 class="profile__text">Degeneracy</h5>
+                        <div class="weeb__con">
+                            <i class="fas fa-plus"></i>
+                            <span class="weeb_num">3</span>
+                        </div>
+                    </div>
+                    <div class="joining__date">
+                        <h5 class="profile__text">Joined</h5>
+                        <div class="weeb__con">
+                            <i class="far fa-calendar-check"></i>
+                            <span class="weeb_num">
+                                <%= @profile.created_at.strftime("%d/%m/%Y")%>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="description">
+                    <small><p> <%= @profile.bio %> </p></small>
+                </div>
+                <div class="message">
+                <a href="">Message</a>
+                </div>
+                <div class="links">
+                <%# <a href="https://www.facebook.com/" target="_blank" class="fb">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/" target="_blank" class="yt">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://codepen.io/" target="_blank" class="cp">
+                    <i class="fab fa-codepen"></i>
+                </a>
+                <a href="" target="_blank" class="bg">
+                    <i class="fab fa-blogger-b"></i>
+                </a> %>
+                </div>
+            </div>
         </div>
     </div>
+
+            <div class="container">
+           
+        </div>
 </div>
