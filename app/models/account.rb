@@ -5,7 +5,7 @@ class Account < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   has_many :posts, dependent: :destroy
-  has_many :communities, dependent: :destroy
+  has_many :communities, through: :subscriptions, dependent: :destroy
 
   validates_presence_of :username
 

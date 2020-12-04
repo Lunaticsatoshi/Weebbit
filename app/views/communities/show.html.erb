@@ -19,7 +19,7 @@
                         <h5 class="profile__text">Members</h5>
                         <div class="weeb__con">
                             <i class="fas fa-plus"></i>
-                            <span class="weeb_num">3</span>
+                            <span class="weeb_num"><%= @subscriber_count %></span>
                         </div>
                     </div>
                     <div class="joining__date">
@@ -33,12 +33,14 @@
                     </div>
                 </div>
                 <div class="description">
-                    <small><p> <%= simple_format @community.rules %> </p></small>
+                    <small><p> <%= simple_format @community.summary %> </p></small>
                 </div>
-                <% if account_signed_in? %>
+                <% if @is_subscribed %>
                     <div class="message">
                         <%= link_to "Create New Post", new_community_post_path(@community)%>
                     </div>
+                <% else %>
+                    <%= render partial: "communities/subscribe", locals: {community_id: @community.id }%>
                 <% end %>
                 <div class="links">
                 <%# <a href="https://www.facebook.com" target="_blank" class="fb">
